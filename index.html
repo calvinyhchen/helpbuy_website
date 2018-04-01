@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<h2 align=center>測試</a></h2>
+<h4 align=center>測試</h4>
+<h5 align=center>測試<br>測試</h5>
+<h5 align=center><img src="plot/a.png" width="20%" height="20%"/><img src="plot/b.png" width="20%" height="20%"/><img src="plot/c.png" width="20%" height="20%"/></h5>
+
+
+
+
+<script>
+function pay() {
+    var way = parseInt(document.getElementById("way").value)
+    var tax = parseInt(document.getElementById("tax").value)
+    var weight = parseInt(document.getElementById("weight").value)
+    if(way!=0 && tax!= 0)
+        document.getElementById('pay').value = way + tax + weight;
+}
+function show() {
+    var ratio = 0.393700787
+    var l = parseInt(document.getElementById("l").value) * ratio
+    var w = parseInt(document.getElementById("w").value) * ratio
+    var h = parseInt(document.getElementById("h").value) * ratio
+    if(l&&w&&h)
+        document.getElementById('total').value = l*w*h/139;
+}
+</script>
+
+
+<BODY>
+
+
+寄送方式:<select name="way" id="way" >
+　<option value=0>----
+　<option value=3>直寄三天到貨
+　<option value=5>直寄五天到貨
+　<option value=1>集運
+</select>
+</br>
+
+選擇方案:<select name="tax" id="tax" >
+　<option value=0>----
+　<option value=1>含稅
+　<option value=2>不含稅
+</select>
+</br>
+
+包裹重量(kg): <input name="weight" id="weight" type="text" size="20">
+</br>
+
+包裹材積: </br>
+長(cm):<input name="l" id="l" type="text" size="5" onchange="show()">
+＊寬(cm): <input name="w" id="w" type="text" size="5" onchange="show()">
+＊高(cm): <input name="h" id="h" type="text" size="5" onchange="show()">
+＝材積: <input name="total" id="total" type="text" size="20">
+
+</br>
+</br>
+
+<button onclick="pay()">Submit</button>
+
+</br>
+</br>
+
+lbs: <input type="text" id="pay" /><br> 
+Price: <input type="text" id="pay" /><br> 
+
+</br></br></br></br>
+
+
+</BODY>
+</html>
