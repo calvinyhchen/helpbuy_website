@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<h2 align=center>測試</a></h2>
-<h4 align=center>測試</h4>
-<h5 align=center>測試<br>測試</h5>
-<h5 align=center><img src="plot/a.jpg" width="20%" height="20%"/><img src="plot/b.png" width="20%" height="20%"/><img src="plot/c.png" width="20%" height="20%"/></h5>
+<h5 align=center><img src="plot/daygo.jpg" width="20%" height="20%"/></h5>
 
 
 
@@ -13,7 +10,6 @@
 function pay() {
     var rate = 2.20462262 
     var way = parseFloat(document.getElementById("way").value)
-    var tax = parseFloat(document.getElementById("tax").value)
     var weight = parseFloat(document.getElementById("weight").value)*rate
     var box = parseFloat(document.getElementById("total").value)
     if(weight && box)
@@ -44,10 +40,10 @@ function pay() {
                     4551, 4780, 4900, 5002, 5126 ];
         document.getElementById('pay').value = prz[box-1];
     }
-    else if(way==1 && tax== 1 && weight && box){
+    else if(way==1 && weight && box){
         document.getElementById('pay').value = 490 + 160*(box-1);
     }
-    else if(way==1 && tax== 2 && weight && box){
+    else if(way==2 && weight && box){
         document.getElementById('pay').value = 490 + 130*(box-1);
     }
     else
@@ -67,20 +63,19 @@ function show() {
 <BODY>
 
 
-寄送方式:<select name="way" id="way" >
-　<option value=0>----
-　<option value=3>直寄三天到貨
-　<option value=5>直寄五天到貨
-　<option value=1>集運
+寄送方式: <select name="way" id="way"> 
+<option value=0>----</option>
+<optgroup label="直寄"> 
+    <option value=3>直寄三天到貨</option>
+    <option value=5>直寄五天到貨</option>
+<optgroup label="集運"> 
+    <option value=1>集運含稅</option>  
+    <option value=2>集運不含稅</option> 
 </select>
+
 </br>
 
-選擇方案(集運):<select name="tax" id="tax" >
-　<option value=0>----
-　<option value=1>含稅
-　<option value=2>不含稅
-</select>
-</br>
+
 
 包裹重量(kg): <input name="weight" id="weight" type="text" size="20">
 </br>
