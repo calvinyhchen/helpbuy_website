@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-<h5 align=center><img src="plot/daygo.jpg" width="20%" height="20%"/></h5>
+<h5 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h5>
 
 
 
 
 <script>
-function pay() {
+function pay0() {
     var rate = 2.20462262 
-    var way = parseFloat(document.getElementById("way").value)
-    var weight = parseFloat(document.getElementById("weight").value)*rate
-    var box = parseFloat(document.getElementById("total").value)
+    var way = parseFloat(document.getElementById("way0").value)
+    var weight = parseFloat(document.getElementById("weight0").value)*rate
+    var box = parseFloat(document.getElementById("total0").value)
     if(weight && box)
         if(weight>box){
-            document.getElementById('lbs').value = Math.ceil(weight);
+            document.getElementById('lbs0').value = Math.ceil(weight);
             box = Math.ceil(weight);
         }
         else
-            document.getElementById('lbs').value = box;
+            document.getElementById('lbs0').value = box;
     else
-        document.getElementById('lbs').value = NaN;
+        document.getElementById('lbs0').value = NaN;
 
     if(way==3 && weight && box){
         var prz = [ 1160, 1408, 1694, 1854, 2078,
@@ -29,7 +29,7 @@ function pay() {
                     3550, 3710, 3870, 3998, 4126,
                     4383, 4500, 4606, 4734, 4722,
                     4806, 4907, 5038, 5131, 5278 ]; 
-        document.getElementById('pay').value = prz[box-1];
+        document.getElementById('pay0').value = prz[box-1];
     }
     else if(way==5 && weight && box){
         var prz = [  968, 1196, 1483, 1672, 1886,
@@ -38,24 +38,52 @@ function pay() {
                     3336, 3487, 3676, 3788, 3864, 
                     4000, 4102, 4224, 4358, 4492, 
                     4551, 4780, 4900, 5002, 5126 ];
-        document.getElementById('pay').value = prz[box-1];
-    }
-    else if(way==1 && weight && box){
-        document.getElementById('pay').value = 490 + 160*(box-1);
-    }
-    else if(way==2 && weight && box){
-        document.getElementById('pay').value = 490 + 130*(box-1);
+        document.getElementById('pay0').value = prz[box-1];
     }
     else
-        document.getElementById('pay').value = NaN;
+        document.getElementById('pay0').value = NaN;
 }
-function show() {
+function pay1() {
+    var rate = 2.20462262 
+    var way = parseFloat(document.getElementById("way1").value)
+    var weight = parseFloat(document.getElementById("weight1").value)*rate
+    var box = parseFloat(document.getElementById("total1").value)
+    if(weight && box)
+        if(weight>box){
+            document.getElementById('lbs1').value = Math.ceil(weight);
+            box = Math.ceil(weight);
+        }
+        else
+            document.getElementById('lbs1').value = box;
+    else
+        document.getElementById('lbs1').value = NaN;
+
+    if(way==1 && weight && box){
+        document.getElementById('pay1').value = 490 + 160*(box-1);
+    }
+    else if(way==2 && weight && box){
+        document.getElementById('pay1').value = 490 + 130*(box-1);
+    }
+    else
+        document.getElementById('pay1').value = NaN;
+}
+
+function show0() {
     var ratio = 0.393700787
-    var l = parseFloat(document.getElementById("l").value) * ratio
-    var w = parseFloat(document.getElementById("w").value) * ratio
-    var h = parseFloat(document.getElementById("h").value) * ratio
+    var l = parseFloat(document.getElementById("l0").value) * ratio
+    var w = parseFloat(document.getElementById("w0").value) * ratio
+    var h = parseFloat(document.getElementById("h0").value) * ratio
     if(l&&w&&h)
-        document.getElementById('total').value = Math.ceil(l*w*h/139);
+        document.getElementById('total0').value = Math.ceil(l*w*h/139);
+}
+
+function show1() {
+    var ratio = 0.393700787
+    var l = parseFloat(document.getElementById("l1").value) * ratio
+    var w = parseFloat(document.getElementById("w1").value) * ratio
+    var h = parseFloat(document.getElementById("h1").value) * ratio
+    if(l&&w&&h)
+        document.getElementById('total1').value = Math.ceil(l*w*h/139);
 }
 </script>
 
@@ -63,42 +91,68 @@ function show() {
 <BODY>
 
 
-寄送方式: <select name="way" id="way"> 
+直寄</br>寄送方式: <select name="way0" id="way0"> 
 <option value=0>----</option>
-<optgroup label="直寄"> 
-    <option value=3>直寄三天到貨</option>
-    <option value=5>直寄五天到貨</option>
-<optgroup label="集運"> 
-    <option value=1>集運含稅</option>  
-    <option value=2>集運不含稅</option> 
+<option value=3>直寄三天到貨</option>
+<option value=5>直寄五天到貨</option>
+
 </select>
 
 </br>
 
 
 
-包裹重量(kg): <input name="weight" id="weight" type="text" size="20">
+包裹重量(kg): <input name="weight0" id="weight0" type="text" size="20">
 </br>
 
-包裹材積: </br>
-長(cm):<input name="l" id="l" type="text" size="5" onchange="show()">
-＊寬(cm): <input name="w" id="w" type="text" size="5" onchange="show()">
-＊高(cm): <input name="h" id="h" type="text" size="5" onchange="show()">
-＝材積(lbs): <input name="total" id="total" type="text" size="20">
+包裹材積: 
+長(cm):<input name="l0" id="l0" type="text" size="5" onchange="show0()">
+＊寬(cm): <input name="w0" id="w0" type="text" size="5" onchange="show0()">
+＊高(cm): <input name="h0" id="h0" type="text" size="5" onchange="show0()">
+＝材積(lbs): <input name="total0" id="total0" type="text" size="20">
+
+</br>
+
+<button onclick="pay0()">Submit</button>
 
 </br>
 </br>
 
-<button onclick="pay()">Submit</button>
+lbs: <input type="text" id="lbs0" /><br> 
+Price: <input type="text" id="pay0" /><br> 
+
+
+
+<h5 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h5>
+
+集運</br>寄送方式: <select name="way1" id="way1"> 
+<option value=0>----</option>
+<option value=1>集運含稅</option>  
+<option value=2>集運不含稅</option> 
+</select>
+
+</br>
+
+
+
+包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
+</br>
+
+包裹材積: 
+長(cm):<input name="l1" id="l1" type="text" size="5" onchange="show1()">
+＊寬(cm): <input name="w1" id="w1" type="text" size="5" onchange="show1()">
+＊高(cm): <input name="h1" id="h1" type="text" size="5" onchange="show1()">
+＝材積(lbs): <input name="total1" id="total1" type="text" size="20">
+
+</br>
+
+<button onclick="pay1()">Submit</button>
 
 </br>
 </br>
 
-lbs: <input type="text" id="lbs" /><br> 
-Price: <input type="text" id="pay" /><br> 
-
-</br></br></br></br>
-
+lbs: <input type="text" id="lbs1" /><br> 
+Price: <input type="text" id="pay1" /><br> 
 
 </BODY>
 </html>
