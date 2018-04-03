@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<h5 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h5>
+<h2 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h2>
 
 
 
@@ -91,6 +91,37 @@ function show1() {
 <BODY>
 
 
+集運</br>含稅不含稅: <select name="way1" id="way1"> 
+<option value=0>----</option>
+<option value=1>集運含稅</option>  
+<option value=2>集運不含稅</option> 
+</select>
+
+</br>
+
+
+
+包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
+</br>
+
+包裹材積: 
+長(cm):<input name="l1" id="l1" type="text" size="5" onchange="show1()">
+＊寬(cm): <input name="w1" id="w1" type="text" size="5" onchange="show1()">
+＊高(cm): <input name="h1" id="h1" type="text" size="5" onchange="show1()">
+＝材積(lbs): <input name="total1" id="total1" type="text" size="20">
+
+</br>
+
+<button onclick="pay1()">Submit</button>
+
+</br>
+</br>
+
+lbs: <input type="text" id="lbs1" /><br> 
+Price: <input type="text" id="pay1" /><br> 
+
+<h2 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h2>
+
 直寄</br>寄送方式: <select name="way0" id="way0"> 
 <option value=0>----</option>
 <option value=3>直寄三天到貨</option>
@@ -120,39 +151,6 @@ function show1() {
 
 lbs: <input type="text" id="lbs0" /><br> 
 Price: <input type="text" id="pay0" /><br> 
-
-
-
-<h5 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h5>
-
-集運</br>寄送方式: <select name="way1" id="way1"> 
-<option value=0>----</option>
-<option value=1>集運含稅</option>  
-<option value=2>集運不含稅</option> 
-</select>
-
-</br>
-
-
-
-包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
-</br>
-
-包裹材積: 
-長(cm):<input name="l1" id="l1" type="text" size="5" onchange="show1()">
-＊寬(cm): <input name="w1" id="w1" type="text" size="5" onchange="show1()">
-＊高(cm): <input name="h1" id="h1" type="text" size="5" onchange="show1()">
-＝材積(lbs): <input name="total1" id="total1" type="text" size="20">
-
-</br>
-
-<button onclick="pay1()">Submit</button>
-
-</br>
-</br>
-
-lbs: <input type="text" id="lbs1" /><br> 
-Price: <input type="text" id="pay1" /><br> 
 
 </BODY>
 </html>
