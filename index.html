@@ -5,13 +5,16 @@
 
 
 
-
 <script>
 function pay0() {
     var rate = 2.20462262 
     var way = parseFloat(document.getElementById("way0").value)
     var weight = parseFloat(document.getElementById("weight0").value)*rate
-    var box = parseFloat(document.getElementById("total0").value)
+    var ratio = 0.393700787
+    var l = Math.ceil(Math.floor(parseFloat(document.getElementById("l0").value) * ratio * 10)/10)
+    var w = Math.ceil(Math.floor(parseFloat(document.getElementById("w0").value) * ratio * 10)/10)
+    var h = Math.ceil(Math.floor(parseFloat(document.getElementById("h0").value) * ratio * 10)/10)
+    var box = Math.ceil(l*w*h/139)
     if(weight && box)
         if(weight>box){
             document.getElementById('lbs0').value = Math.ceil(weight);
@@ -45,9 +48,13 @@ function pay0() {
 }
 function pay1() {
     var rate = 2.20462262 
+    var ratio = 0.393700787
     var way = parseFloat(document.getElementById("way1").value)
-    var weight = parseFloat(document.getElementById("weight1").value)*rate
-    var box = parseFloat(document.getElementById("total1").value)
+    var weight = Math.ceil(parseFloat(document.getElementById("weight1").value)*rate)
+    var l = Math.ceil(Math.floor(parseFloat(document.getElementById("l1").value) * ratio * 10)/10)
+    var w = Math.ceil(Math.floor(parseFloat(document.getElementById("w1").value) * ratio * 10)/10)
+    var h = Math.ceil(Math.floor(parseFloat(document.getElementById("h1").value) * ratio * 10)/10)
+    var box = Math.ceil(l*w*h/139);
     if(weight && box)
         if(weight>box){
             document.getElementById('lbs1').value = Math.ceil(weight);
@@ -68,30 +75,15 @@ function pay1() {
         document.getElementById('pay1').value = NaN;
 }
 
-function show0() {
-    var ratio = 0.393700787
-    var l = parseFloat(document.getElementById("l0").value) * ratio
-    var w = parseFloat(document.getElementById("w0").value) * ratio
-    var h = parseFloat(document.getElementById("h0").value) * ratio
-    if(l&&w&&h)
-        document.getElementById('total0').value = Math.ceil(l*w*h/139);
-}
 
-function show1() {
-    var ratio = 0.393700787
-    var l = parseFloat(document.getElementById("l1").value) * ratio
-    var w = parseFloat(document.getElementById("w1").value) * ratio
-    var h = parseFloat(document.getElementById("h1").value) * ratio
-    if(l&&w&&h)
-        document.getElementById('total1').value = Math.ceil(l*w*h/139);
-}
 </script>
 
 
 <BODY>
 
 
-集運</br>含稅不含稅: <select name="way1" id="way1"> 
+<font size="+2"><b>集運</b></font></br>
+含稅/不含稅: <select name="way1" id="way1"> 
 <option value=0>----</option>
 <option value=1>集運含稅</option>  
 <option value=2>集運不含稅</option> 
@@ -105,10 +97,10 @@ function show1() {
 </br>
 
 包裹材積: 
-長(cm):<input name="l1" id="l1" type="text" size="5" onchange="show1()">
-＊寬(cm): <input name="w1" id="w1" type="text" size="5" onchange="show1()">
-＊高(cm): <input name="h1" id="h1" type="text" size="5" onchange="show1()">
-＝材積(lbs): <input name="total1" id="total1" type="text" size="20">
+長(cm):<input name="l1" id="l1" type="text" size="5" >
+＊寬(cm): <input name="w1" id="w1" type="text" size="5" >
+＊高(cm): <input name="h1" id="h1" type="text" size="5" >
+
 
 </br>
 
@@ -137,10 +129,10 @@ Price: <input type="text" id="pay1" /><br>
 </br>
 
 包裹材積: 
-長(cm):<input name="l0" id="l0" type="text" size="5" onchange="show0()">
-＊寬(cm): <input name="w0" id="w0" type="text" size="5" onchange="show0()">
-＊高(cm): <input name="h0" id="h0" type="text" size="5" onchange="show0()">
-＝材積(lbs): <input name="total0" id="total0" type="text" size="20">
+長(cm):<input name="l0" id="l0" type="text" size="5" >
+＊寬(cm): <input name="w0" id="w0" type="text" size="5" >
+＊高(cm): <input name="h0" id="h0" type="text" size="5" >
+
 
 </br>
 
