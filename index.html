@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<h2 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h2>
+
 
 
 
@@ -80,13 +80,15 @@ function pay1() {
 
 
 <BODY>
+    <h2 align=center><img src="plot/gather.jpg" width="50%" height="50%"/></h2>
+<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
 
 
 <font size="+2"><b>集運</b></font></br>
 含稅/不含稅: <select name="way1" id="way1"> 
 <option value=0>----</option>
-<option value=1>集運含稅</option>  
-<option value=2>集運不含稅</option> 
+<option value=1>含稅</option>  
+<option value=2>不含稅</option> 
 </select>
 
 </br>
@@ -104,20 +106,20 @@ function pay1() {
 
 </br>
 
-<button onclick="pay1()">Submit</button>
+<button onclick="pay1()">送出</button>
 
 </br>
 </br>
 
-lbs: <input type="text" id="lbs1" /><br> 
-Price: <input type="text" id="pay1" /><br> 
+磅數: <input type="text" id="lbs1" /><br> 
+集運費用: <input type="text" id="pay1" /><br> 
 
-<h2 align=left><img src="plot/daygo.jpg" width="8%" height="8%"/></h2>
+<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
 
-直寄</br>寄送方式: <select name="way0" id="way0"> 
+<font size="+2"><b>直寄</b></font></br>寄送方式: <select name="way0" id="way0"> 
 <option value=0>----</option>
-<option value=3>直寄三天到貨</option>
-<option value=5>直寄五天到貨</option>
+<option value=3>三天到貨</option>
+<option value=5>五天到貨</option>
 
 </select>
 
@@ -136,13 +138,13 @@ Price: <input type="text" id="pay1" /><br>
 
 </br>
 
-<button onclick="pay0()">Submit</button>
+<button onclick="pay0()">送出</button>
 
 </br>
 </br>
 
-lbs: <input type="text" id="lbs0" /><br> 
-Price: <input type="text" id="pay0" /><br> 
+磅數: <input type="text" id="lbs0" /><br> 
+直寄費用: <input type="text" id="pay0" /><br> 
 
 </BODY>
 </html>
