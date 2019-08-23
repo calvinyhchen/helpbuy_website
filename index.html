@@ -15,16 +15,21 @@ function pay0() {
     var w = Math.ceil(Math.floor(parseFloat(document.getElementById("w0").value) * ratio * 10)/10)
     var h = Math.ceil(Math.floor(parseFloat(document.getElementById("h0").value) * ratio * 10)/10)
     var box = Math.ceil(l*w*h/139)
-    if(weight && box)
-        if(weight>box){
-            document.getElementById('lbs0').value = Math.ceil(weight);
-            box = Math.ceil(weight);
-        }
+    
+    if(way == 5){
+        if(weight && box)
+            if(weight>box){
+                document.getElementById('lbs0').value = Math.ceil(weight);
+                box = Math.ceil(weight);
+            }
+            else
+                document.getElementById('lbs0').value = box;
         else
-            document.getElementById('lbs0').value = box;
-    else
-        document.getElementById('lbs0').value = NaN;
-
+            document.getElementById('lbs0').value = NaN;
+        }
+    else 
+        box = Math.ceil(weight);
+  
     if(way==3 && weight && box){
         var prz = [ 1160, 1408, 1694, 1854, 2078,
                     2174, 2334, 2494, 2622, 2702,
@@ -32,7 +37,8 @@ function pay0() {
                     3550, 3710, 3870, 3998, 4126,
                     4383, 4500, 4606, 4734, 4722,
                     4806, 4907, 5038, 5131, 5278 ]; 
-        document.getElementById('pay0').value = prz[box-1];
+        
+        document.getElementById('pay0').value = 190*box;
     }
     else if(way==5 && weight && box){
         var prz = [  968, 1196, 1483, 1672, 1886,
@@ -66,10 +72,22 @@ function pay1() {
         document.getElementById('lbs1').value = NaN;
 
     if(way==1 && weight && box){
-        document.getElementById('pay1').value = 490 + 160*(box-1);
+        
+				if(box >= 1.1){
+				    document.getElementById('pay1').value = 260 + 160*(box-1);
+				}
+				else 
+					document.getElementById('pay1').value = 420;        
+        
     }
     else if(way==2 && weight && box){
-        document.getElementById('pay1').value = 490 + 130*(box-1);
+        
+                if(box >= 1.1){
+				    document.getElementById('pay1').value = 260 + 135*(box-1);
+				}
+				else 
+                    document.getElementById('pay1').value = 395;
+        
     }
     else
         document.getElementById('pay1').value = NaN;
@@ -118,8 +136,8 @@ function pay1() {
 
 <font size="+2"><b>直寄</b></font></br>寄送方式: <select name="way0" id="way0"> 
 <option value=0>----</option>
-<option value=3>三天到貨</option>
-<option value=5>五天到貨</option>
+<option value=3>台灣</option>
+<option value=5>香港</option>
 
 </select>
 
