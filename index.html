@@ -93,7 +93,7 @@ function pay1() {
 </script>
 
     <head>
-        <title> Daygo - Calculator test</title>
+        <title> Layout 1: float test</title>
         <style>
             body {background-color: #f1f1f1;}
             .container {
@@ -132,13 +132,14 @@ function pay1() {
 
     <body>
         <header class="container site-header">
-		<div class="site-header-inner">
-			<h2 align=center><img src="plot/gather.jpg" width="50%" height="50%"/></h2>
-		</div>
+            <div class="site-header-inner"></div>
+				<h2 align=center><img src="plot/gather.jpg" width="50%" height="50%"/></h2>
         </header>
 
         <div class="container site-main">
+
             <div class="site-main-inner">
+
                 <div class="content"><h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
 					<font size="+2"><b>集運</b></font></br>
 					含稅/不含稅: <select name="way1" id="way1"> 
@@ -149,9 +150,9 @@ function pay1() {
 					</br>
 					包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
 					</br>
-					包裹材積:</br>
-					長(cm):<input name="l1" id="l1" type="text" size="5" ></br>
-					＊寬(cm): <input name="w1" id="w1" type="text" size="5" ></br>
+					包裹材積: </br>
+					長(cm):<input name="l1" id="l1" type="text" size="5" >
+					＊寬(cm): <input name="w1" id="w1" type="text" size="5" >
 					＊高(cm): <input name="h1" id="h1" type="text" size="5" >
 					</br>
 					<button onclick="pay1()">送出</button>
@@ -164,7 +165,7 @@ function pay1() {
 					<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
 					<!-- <h2 align=right><img src="plot/logo.jpg" width="50%" height="50%"/></h2> -->
 
-					<font size="+2"><b>直寄</b></font></br>寄送地點: <select name="way0" id="way0"> 
+					<font size="+2"><b>直寄</b></font></br>寄送方式: <select name="way0" id="way0"> 
 					<option value=0>----</option>
 					<option value=3>台灣</option>
 					<option value=5>香港</option>
@@ -178,9 +179,9 @@ function pay1() {
 					包裹重量(kg): <input name="weight0" id="weight0" type="text" size="20">
 					</br>
 
-					包裹材積:</br> 
-					長(cm):<input name="l0" id="l0" type="text" size="5" ></br>
-					＊寬(cm): <input name="w0" id="w0" type="text" size="5" ></br>
+					包裹材積: </br>
+					長(cm):<input name="l0" id="l0" type="text" size="5" >
+					＊寬(cm): <input name="w0" id="w0" type="text" size="5" >
 					＊高(cm): <input name="h0" id="h0" type="text" size="5" >
 
 
@@ -199,9 +200,9 @@ function pay1() {
         </div>
 
         <footer class="container site-footer">
-            <div class="site-footer-inner">
-		    <h2 align=center><img src="plot/price_list.png" width="80%" height="100%"/></h2>
-	    </div>
+
+            <div class="site-footer-inner"></div>
+<h2 align=center><img src="plot/price_list.png" width="80%" height="100%"/></h2>
         </footer>
 
     </body>
