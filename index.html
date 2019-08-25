@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
-
-
-
 <script>
 function pay0() {
     var rate = 2.20462262 
@@ -29,7 +25,6 @@ function pay0() {
         }
     else 
         document.getElementById('lbs0').value = Math.ceil(weight);
-
   
     if(way==3 && weight && box){
         var prz = [ 1160, 1408, 1694, 1854, 2078,
@@ -74,7 +69,6 @@ function pay1() {
             document.getElementById('lbs1').value = box;
     else
         document.getElementById('lbs1').value = NaN;
-
     if(way==1 && weight && box){
         
 				if(box >= 1.1){
@@ -96,77 +90,121 @@ function pay1() {
     else
         document.getElementById('pay1').value = NaN;
 }
-
-
 </script>
 
+    <head>
+        <title> Layout 1: float test</title>
+        <style>
+            body {background-color: #f1f1f1;}
+            .container {
+                width : 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .site-header {background-color: #FAE5D3;}
+            .site-main {background-color: #fff;}
+            .site-footer {background-color: #607d8b;}
+            .site-header-inner {
+                height: 35px;
+            }
+            .site-footer-inner {
+                height: 10px;
+            }
+            .site-main-inner::after {
+                content: "";
+                display: block;  /**必要**/
+                clear: both;
+            }
+            .content {
+                height: 400px;
+                width: 50%;
+                background-color: #ddd;
+                float: left;
+            }
+            .sidebar {
+                height: 400px;
+                width: 50%;
+                background-color: #ccc;
+                float: right;
+            }
+        </style>
+    </head>
 
-<BODY>
-    <h2 align=center><img src="plot/gather.jpg" width="50%" height="50%"/></h2>
-<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
+    <body>
+        <header class="container site-header">
+            <div class="site-header-inner"></div>
+				<h2 align=center><img src="plot/gather.jpg" width="50%" height="50%"/></h2>
+        </header>
 
+        <div class="container site-main">
 
-<font size="+2"><b>集運</b></font></br>
-含稅/不含稅: <select name="way1" id="way1"> 
-<option value=0>----</option>
-<option value=1>含稅</option>  
-<option value=2>不含稅</option> 
-</select>
+            <div class="site-main-inner">
 
-</br>
+                <div class="content"><h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
+					<font size="+2"><b>集運</b></font></br>
+					含稅/不含稅: <select name="way1" id="way1"> 
+					<option value=0>----</option>
+					<option value=1>含稅</option>  
+					<option value=2>不含稅</option> 
+					</select>
+					</br>
+					包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
+					</br>
+					包裹材積: 
+					長(cm):<input name="l1" id="l1" type="text" size="5" >
+					＊寬(cm): <input name="w1" id="w1" type="text" size="5" >
+					＊高(cm): <input name="h1" id="h1" type="text" size="5" >
+					</br>
+					<button onclick="pay1()">送出</button>
+					</br>
+					</br>
+					磅數: <input type="text" id="lbs1" /><br> 
+					集運費用: <input type="text" id="pay1" /><br> 
+				</div>
+                <div class="sidebar">
+					<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
+					<!-- <h2 align=right><img src="plot/logo.jpg" width="50%" height="50%"/></h2> -->
 
+					<font size="+2"><b>直寄</b></font></br>寄送方式: <select name="way0" id="way0"> 
+					<option value=0>----</option>
+					<option value=3>台灣</option>
+					<option value=5>香港</option>
 
+					</select>
 
-包裹重量(kg): <input name="weight1" id="weight1" type="text" size="20">
-</br>
-
-包裹材積: 
-長(cm):<input name="l1" id="l1" type="text" size="5" >
-＊寬(cm): <input name="w1" id="w1" type="text" size="5" >
-＊高(cm): <input name="h1" id="h1" type="text" size="5" >
-
-
-</br>
-
-<button onclick="pay1()">送出</button>
-
-</br>
-</br>
-
-磅數: <input type="text" id="lbs1" /><br> 
-集運費用: <input type="text" id="pay1" /><br> 
-
-<h2 align=left><img src="plot/logo.jpg" width="8%" height="8%"/></h2>
-
-<font size="+2"><b>直寄</b></font></br>寄送方式: <select name="way0" id="way0"> 
-<option value=0>----</option>
-<option value=3>台灣</option>
-<option value=5>香港</option>
-
-</select>
-
-</br>
+					</br>
 
 
 
-包裹重量(kg): <input name="weight0" id="weight0" type="text" size="20">
-</br>
+					包裹重量(kg): <input name="weight0" id="weight0" type="text" size="20">
+					</br>
 
-包裹材積: 
-長(cm):<input name="l0" id="l0" type="text" size="5" >
-＊寬(cm): <input name="w0" id="w0" type="text" size="5" >
-＊高(cm): <input name="h0" id="h0" type="text" size="5" >
+					包裹材積: 
+					長(cm):<input name="l0" id="l0" type="text" size="5" >
+					＊寬(cm): <input name="w0" id="w0" type="text" size="5" >
+					＊高(cm): <input name="h0" id="h0" type="text" size="5" >
 
 
-</br>
+					</br>
 
-<button onclick="pay0()">送出</button>
+					<button onclick="pay0()">送出</button>
 
-</br>
-</br>
+					</br>
+					</br>
 
-磅數: <input type="text" id="lbs0" /><br> 
-直寄費用: <input type="text" id="pay0" /><br> 
+					磅數: <input type="text" id="lbs0" /><br> 
+					直寄費用: <input type="text" id="pay0" /><br> 
 
-</BODY>
+				</div>
+            </div>
+        </div>
+
+        <footer class="container site-footer">
+
+            <div class="site-footer-inner"></div>
+<h2 align=center><img src="plot/price_list.png" width="80%" height="100%"/></h2>
+        </footer>
+
+    </body>
+
 </html>
