@@ -41,8 +41,8 @@ function pay0() {
         
 	if(weight <= 2.1)
 		document.getElementById('pay0').value = 570;
-	els 
-		document.getElementById('pay0').value = 190*weight;
+	else 
+		document.getElementById('pay0').value = Math.ceil(190*weight);
     }
     else if(way==5 && weight && box){
         var prz = [  968, 1196, 1483, 1672, 1886,
