@@ -28,7 +28,8 @@ function pay0() {
             document.getElementById('lbs0').value = NaN;
         }
     else 
-        box = Math.ceil(weight);
+        document.getElementById('lbs0').value = weight;
+
   
     if(way==3 && weight && box){
         var prz = [ 1160, 1408, 1694, 1854, 2078,
@@ -38,7 +39,10 @@ function pay0() {
                     4383, 4500, 4606, 4734, 4722,
                     4806, 4907, 5038, 5131, 5278 ]; 
         
-        document.getElementById('pay0').value = 190*box;
+	if(weight <= 2.1)
+		document.getElementById('pay0').value = 570;
+	els 
+		document.getElementById('pay0').value = 190*weight;
     }
     else if(way==5 && weight && box){
         var prz = [  968, 1196, 1483, 1672, 1886,
